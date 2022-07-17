@@ -759,7 +759,7 @@ def pkcs7unpad(msg, blocklen):
 
     paddinglen = msg[-1]
 
-    _assert(paddinglen > 0 and paddinglen <= blocklen, "Incorrect padding - Wrong key")
+    _assert(paddinglen > 0 and paddinglen <= blocklen, f"Incorrect padding - Wrong key: paddinglen={paddinglen}, blocklen={blocklen}")
     _assert(msg[-paddinglen:] == bchr(paddinglen) * paddinglen, "Incorrect padding - Wrong key")
 
     return msg[:-paddinglen]

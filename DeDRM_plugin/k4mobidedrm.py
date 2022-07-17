@@ -82,11 +82,11 @@ import json
 class DrmException(Exception):
     pass
 
-import mobidedrm
-import topazextract
-import kgenpids
-import androidkindlekey
-import kfxdedrm
+from . import mobidedrm
+from . import topazextract
+from . import kgenpids
+from . import androidkindlekey
+from . import kfxdedrm
 
 # Wrap a stream so that output gets flushed immediately
 # and also make sure that any unicode strings get
@@ -286,7 +286,7 @@ def decryptBook(infile, outdir, kDatabaseFiles, androidFiles, serials, pids):
     if len(outfilename)>150:
         outfilename = outfilename[:99]+"--"+outfilename[-49:]
 
-    outfilename = outfilename+"_nodrm"
+    #outfilename = outfilename+"_nodrm"
     outfile = os.path.join(outdir, outfilename + book.getBookExtension())
 
     book.getFile(outfile)

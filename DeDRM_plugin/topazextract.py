@@ -22,7 +22,7 @@ import traceback
 from struct import pack
 from struct import unpack
 
-from alfcrypto import Topaz_Cipher
+from .alfcrypto import Topaz_Cipher
 
 # Wrap a stream so that output gets flushed immediately
 # and also make sure that any unicode strings get
@@ -90,7 +90,7 @@ def unicode_argv():
 #global switch
 debug = False
 
-import kgenpids
+from . import kgenpids
 
 
 class DrmException(Exception):

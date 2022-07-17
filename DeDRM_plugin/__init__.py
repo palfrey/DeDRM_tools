@@ -95,7 +95,7 @@ import traceback
 #@@CALIBRE_COMPAT_CODE@@
 
 try: 
-    import __version
+    from . import __version
 except: 
     print("#############################")
     print("Failed to load the DeDRM plugin")
